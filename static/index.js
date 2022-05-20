@@ -412,15 +412,15 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         }
 
         if (mode === MODE_ENDLESS) {
-            if (score <= 5) return '人间至屑';
-            if (score <= 8) return '斯国一(迫真)';
-            if (score <= 10)  return 'sodayo';
-            return '压力马斯内';
+            if (score <= 5) return '来自坤坤的嘲讽';
+            if (score <= 8) return 'NICE~~~';
+            if (score <= 10)  return '坤坤同等';
+            return '比坤坤强';
         } else {
-            if (score <= 49) return '人间至屑';
-            if (score <= 99) return '斯国一(迫真)';
-            if (score <= 149) return 'sodayo';
-            return '压力马斯内';
+            if (score <= 49) return '来自坤坤的嘲讽';
+            if (score <= 99) return 'NICE~~~';
+            if (score <= 149) return ' 坤坤同等';
+            return '比坤坤强';
         }
     }
 
