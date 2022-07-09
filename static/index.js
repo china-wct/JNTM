@@ -50,7 +50,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     }
 
     function modeToString(m) {
-        return m === MODE_NORMAL ? "普通模式" : (m === MODE_ENDLESS ? "无尽模式" : "练习模式");
+        return m === MODE_NORMAL ? "20s" : (m === MODE_ENDLESS ? "不限时" : "练习");
     }
 
     w.changeMode = function(m) {
@@ -208,8 +208,8 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     }
 
     function SubmitResults() {
-        let system = "其他操作系统";
-        let area = "异世界";
+        let system = "非主流系统";
+        let area = "other";
         if (document.getElementById("username").value) {
             if (navigator.appVersion.indexOf("Win") !== -1) system = "Windows";
             if (navigator.appVersion.indexOf("Mac") !== -1) system = "Macintosh";
@@ -358,7 +358,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     }
 
     function getBestScore(score) {
-        // 练习模式不会进入算分界面
+        // 练习模式不积分
         let cookieName = (mode === MODE_NORMAL ? 'bast-score' : 'endless-best-score');
         let best = cookie(cookieName) ? Math.max(parseFloat(cookie(cookieName)), score) : score;
         cookie(cookieName, best.toFixed(2), 100);
@@ -381,7 +381,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         let normalCond = deviation_time < 23000 || mode !== MODE_NORMAL;
         score_text += normalCond ? score : "<span style='color:red;'>" + score + "</span>";
         document.getElementById('GameScoreLayer-score').innerHTML = score_text;
-        document.getElementById('GameScoreLayer-bast').innerHTML = '最佳&nbsp;&nbsp;' + scoreToString(best);
+        document.getElementById('GameScoreLayer-bast').innerHTML = '最好&nbsp;&nbsp;' + scoreToString(best);
         l.style.display = 'block';
     }
 
